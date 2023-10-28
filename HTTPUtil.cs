@@ -28,7 +28,8 @@ namespace WVCore.Server
         {
             AllowAutoRedirect = true,
             AutomaticDecompression = DecompressionMethods.All,
-            ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => true
+            //ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => true
+            ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
         })
         {
             Timeout = TimeSpan.FromMinutes(5)
